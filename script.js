@@ -14,11 +14,13 @@ function writePassword() {
 }
 
 // Generate password function
-function generate() {
-  var passwordLength = prompt("Please enter the number of characters you want your password to contain. Must be no less than 8 and no more than 128 characters");
+function generatePassword() {
+  var passwordLength = prompt("Please enter the number of characters you want your password to contain. Must be no less than 8 and no more than 128 characters")
   if (parseInt(passwordLength) >= 8 && parseInt(passwordLength) <=  128) {
 
-    var lowerCase = confirm("Do you want yoour password to contain lowercase letters?")
+
+    // Pop-up prompts
+    var lowerCase = confirm("Do you want your password to contain lowercase letters?")
 
     var upperCase = confirm("Do you want your password to contain uppercase letters?")
 
@@ -27,6 +29,8 @@ function generate() {
     var specialChars = confirm("Do you want your password to contain special characters?")
 
     var password = "";
+
+    //Variable that defines acceptable characters
 
     var allChars = 'ABCDEFGHIJKLMNOPQURSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890!@#$%^&*()_+'
 
@@ -64,4 +68,3 @@ function generate() {
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
-
