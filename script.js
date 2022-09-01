@@ -34,7 +34,31 @@ function generate() {
       allChars = allChars.toUpperCase();
     };
 
-    if (!upperCase && lowerCase) {}
+    if (!upperCase && lowerCase) {
+      allChars = allChars.toLowerCase();
+    };
+
+    if (!upperCase && !lowerCase) {
+      allChars = allChars.replace(/[A-Za-z]/g, '');
+    };
+
+    if (!numbers) {
+      allChars = allChars.replace(/[^/\D]/g, '');
+    };
+
+    if (!specialChars) {
+      allChars = allChars.replace(/[^a-zA-z0-9 ]/g, '');
+    };
+
+    for (var i = 0; i < parseInt(passwordLength); i++) {
+      password += allChars.charAt(Math.floor(Math.random() * allChars.length));
+
+    };
+
+    return password;
+  }
+  else {
+    return "Please enter a password length between 8-128 characters."
   }
 }
 
