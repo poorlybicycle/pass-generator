@@ -70,3 +70,19 @@ function generatePassword() {
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
+
+
+//Tried adding local storage to memorize previous passwords.
+//It doesn't work, but I will revisit this later so I'm leaving it here.
+generateBtn.addEventListener("click", function(event) {
+  event.preventDefault();
+  
+  // create user object from submission
+  var password = {
+    password: password.value.trim()
+  };
+
+  // set new submission to local storage 
+  localStorage.setItem("user", JSON.stringify(user));
+  
+});
